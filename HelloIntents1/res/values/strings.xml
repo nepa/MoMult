@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, HelloIntentsActivity!</string>
+    <string name="app_name">HelloIntents</string>
+    
+    <!-- Button labels -->
+    <string name="bl_call_browser">Call browser</string>
+    <string name="bl_call_someone">Call Someone</string>
+    <string name="bl_dial">Dial</string>
+    <string name="bl_show_map">Show Map</string>
+    <string name="bl_search_on_map">Search on Map</string>
+    <string name="bl_take_picture">Take picture</string>
+    <string name="bl_show_contacts">Show contacts</string>
+    <string name="bl_edit_first_contact">Edit first contact</string>
+    <string name="bl_show_activity_2">Show Activity 2</string>
+    
+    <!-- TextView content -->
+    <string name="tvc_call_second_activity">Press button to call second activity</string>
+</resources>
