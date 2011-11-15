@@ -78,6 +78,7 @@ public class HelloIntents1Activity extends Activity {
 
 	public void callIntent(View view) {
 		Intent intent = null;
+    
 		switch (view.getId()) {
 		case R.id.Button01:
 			
@@ -97,6 +98,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
+      intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.uni-luebeck.de"));      
 
 			//-----------------------------------------------------------------------------------
 		
@@ -118,6 +120,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
+      intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:(+49)12345789"));
 
 			//-----------------------------------------------------------------------------------
 			
@@ -136,7 +139,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
-
+      intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:(+49)12345789"));
 			
 			//-----------------------------------------------------------------------------------
 
@@ -163,7 +166,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
-
+      intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:50.123,7.1434?z=8"));
 			
 			//-----------------------------------------------------------------------------------
 			
@@ -182,7 +185,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
-
+      intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=query"));
 			
 			//-----------------------------------------------------------------------------------
 
@@ -206,7 +209,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
-
+      intent = new Intent("android.media.action.IMAGE_CAPTURE");
 			
 			//-----------------------------------------------------------------------------------
 
@@ -229,8 +232,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
-			
-
+      intent = new Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people/"));
 			
 			//-----------------------------------------------------------------------------------
 
@@ -250,7 +252,7 @@ public class HelloIntents1Activity extends Activity {
 			//===================================================================================
 			// *** YOUR CODE HERE ***	
 		 	//===================================================================================
-
+      intent = new Intent(Intent.ACTION_EDIT, Uri.parse("content://contacts/people/1"));
 			
 			//-----------------------------------------------------------------------------------
 
@@ -258,10 +260,24 @@ public class HelloIntents1Activity extends Activity {
 		default:
 			break;
 		}
+    
+    // Call desired intent
+    if (view.getId() == R.id.Button06)
+    {
+      this.startActivityForResult(intent, RESULT_CANCELED);
+    }
+    else
+    {
+      this.startActivity(intent);
+    }
 	}
 
 	/*
-	 * Called when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it. The resultCode will be RESULT_CANCELED if the activity explicitly returned that, didn't return any result, or crashed during its operation.
+	 * Called when an activity you launched exits, giving you the requestCode you started it with,
+   * the resultCode it returned, and any additional data from it. The resultCode will be
+   * RESULT_CANCELED if the activity explicitly returned that, didn't return any result,
+   * or crashed during its operation.
+   * 
 	 * You will receive this call immediately before onResume() when your activity is re-starting.
 	 */
 	@Override
@@ -300,7 +316,7 @@ public class HelloIntents1Activity extends Activity {
 	}
 	
 	/*
-	 * Callback if the button is pressed.Invoke ActivityTwo via explicit intent and put on some extras
+	 * Callback if the button is pressed. Invoke ActivityTwo via explicit intent and put on some extras.
 	 */
 	public void callExplicitIntent(View view) {
 		Log.i(TAG,"callExplicitIntent Button pressed"); // information logging
@@ -313,7 +329,9 @@ public class HelloIntents1Activity extends Activity {
 		 * 		
 		 * 		Hints:
 		 * 			- Create an intent "i" using Intent(this, "name of the ActivityTwo class")
-		 * 			- To put information use putExtra(String name, String value). The name is the key name of the information (use "Value1" and "Value2" as keys) and the value is the information to be sent
+		 * 			- To put information use putExtra(String name, String value). The name is the key name
+     *        of the information (use "Value1" and "Value2" as keys) and the value is the information
+     *        to be sent
 		 * 			- Use startActivityForResult(i, REQUEST_CODE) method to send the intent
 		 * 			- Review "onActivityResult" method Part2
 		 */
@@ -321,11 +339,13 @@ public class HelloIntents1Activity extends Activity {
 		//===================================================================================
 		// *** YOUR CODE HERE ***	
 	 	//===================================================================================
-		
+    Intent i = new Intent(this, ActivityTwo.class);
+    i.putExtra("Value1", "Content of value 1.");
+    i.putExtra("Value2", "Content of value 2.");
+    this.startActivityForResult(i, REQUEST_CODE);
 
 		//-----------------------------------------------------------------------------------
 
-	}
-	
+	}	
 	
 }

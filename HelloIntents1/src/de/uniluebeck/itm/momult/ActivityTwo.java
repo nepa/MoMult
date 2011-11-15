@@ -46,10 +46,26 @@ public class ActivityTwo extends Activity {
 		
 		//===================================================================================
 		// *** YOUR CODE HERE ***	
-	 	//===================================================================================	
+	 	//===================================================================================
+    Bundle extras = this.getIntent().getExtras();
+    
+    if (null != extras)
+    {
+      String content1 = extras.getString("Value1");
+      String content2 = extras.getString("Value2");
+      
+      if (null != content1 && null != content2)
+      {
+        // Set value of first text field
+        EditText textField1 = (EditText)this.findViewById(R.id.EditText01);
+        textField1.setText(extras.getString(content1));
 
-		
-		
+        // Set value of second text field
+        EditText textField2 = (EditText)this.findViewById(R.id.EditText02);
+        textField2.setText(extras.getString(content2));
+      }
+    }
+    
 		//-----------------------------------------------------------------------------------
 
 	}
@@ -60,7 +76,7 @@ public class ActivityTwo extends Activity {
 	}
 
 	/*
-	 * On finish make an intent to be returned to the calling activity with some extras
+	 * On finish make an intent to be returned to the calling activity with some extras.
 	 */
 	@Override
 	public void finish() {
@@ -72,20 +88,30 @@ public class ActivityTwo extends Activity {
 		 * 		
 		 * 		Hints:
 		 * 			- Create an intent "data" using Intent data = new Intent();
-		 * 			- To put information use putExtra(String name, String value). The name is the key name of the information (use "returnKey1" and "returnKey2" as keys) and the value is the information to be sent
-		 * 			- Use setResult(RESULT_OK, data) method to send data back to the calling activity "MyIntentsActivity" in this case. 
-		 * 			  When an activity exits, it can call setResult to return data back to its parent. It must always supply a result code,
-		 * 			  which can be the standard results RESULT_CANCELED, RESULT_OK, or any custom values starting at RESULT_FIRST_USER. 
-		 * 			  In addition, it can optionally return back an Intent containing any additional data it wants.
+		 * 			- To put information use putExtra(String name, String value). The name is the key name
+     *        of the information (use "returnKey1" and "returnKey2" as keys) and the value is the
+     *        information to be sent
+		 * 			- Use setResult(RESULT_OK, data) method to send data back to the calling activity
+     *        "MyIntentsActivity" in this case.
+     * 
+     * When an activity exits, it can call setResult to return data back to its parent. It must
+     * always supply a result code, which can be the standard results RESULT_CANCELED, RESULT_OK,
+     * or any custom values starting at RESULT_FIRST_USER.
+     * 
+     * In addition, it can optionally return back an Intent containing any additional data it wants.
 		 * 			- Review "onActivityResult" method Part2 in the "MyIntentsActivity" class
 		 */
 		
 		//===================================================================================
 		// *** YOUR CODE HERE ***	
-	 	//===================================================================================	
+	 	//===================================================================================
+    Intent data = new Intent();
+    data.putExtra("returnKey1", "Value of return key 1.");
+    data.putExtra("returnKey2", "Value of return key 2.");
+    
+    this.setResult(RESULT_OK, data);
 
 		//-----------------------------------------------------------------------------------
-
 		
 		super.finish();
 	}

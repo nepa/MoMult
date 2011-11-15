@@ -4,11 +4,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+      
+  <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hello" />
+ 
  <!-- 
  	 *************************************************************************************
 	 !!! LAB EXERCISE !!!
@@ -20,23 +18,22 @@
  			- edit the "android:text" property  
     TODO 1.3 Review how the buttons are linked to the callback method in the code "callIntent" 
  -->
- 	 
- <!-- 
- 	===================================================================================
-	 *** YOUR CODE HERE ***	
- 	===================================================================================
--->	   
-
-<Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Call browser" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Call Someone" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dial" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Show Map" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Search on Map" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Take picture" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button07" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Show contacts" android:width="200px" android:onClick="callIntent"></Button>
-<Button android:id="@+id/Button08" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Edit first contact" android:width="200px" android:onClick="callIntent"></Button>
+ 
+ <!--
+  ===================================================================================
+   *** YOUR CODE HERE ***	
+  ===================================================================================
+ -->  
+  <Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_call_browser" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_call_someone" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_dial" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_show_map" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_search_on_map" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_take_picture" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button07" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_show_contacts" android:width="200px" android:onClick="callIntent"></Button>
+  <Button android:id="@+id/Button08" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_edit_first_contact" android:width="200px" android:onClick="callIntent"></Button>
    
-<TextView  android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Press button to call second activity"/>    
-<Button android:id="@+id/Button09" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Show Activity 2" android:width="200px" android:onClick="callExplicitIntent"></Button>
-    
+  <Button android:id="@+id/Button09" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bl_show_activity_2" android:width="200px" android:onClick="callExplicitIntent"></Button>
+  <TextView  android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/tvc_call_second_activity"/>
+  
 </LinearLayout>
