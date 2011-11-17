@@ -83,6 +83,7 @@ public class MyDisplayViewsActivity extends Activity
         //--- Part1---  Gallery
         
         // Define the gallery
+        Gallery gallery = null; // TODO: Added to remove exception from build process
            
         gallery.setOnItemClickListener(new OnItemClickListener() 
         {

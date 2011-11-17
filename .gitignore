@@ -14,4 +14,7 @@ gen/
 
 # Local configuration files
 local.properties
+build.properties
+default.properties
+private.properties
 

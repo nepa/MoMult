@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 
 
+
 /**
  * Mobile Multimedia Systems Exercises (MMS2011)
  *  							Exercise 3
@@ -31,7 +32,7 @@ import android.os.Bundle;
  * 
  * 		
  * TODO
- * 1. Follow the instructions bellow and complete the exercise
+ * 1. Follow the instructions below and complete the exercise
  * 2. You will need to integrate the different part of the exercise to have a fully working app
  * 
  * Hint:
@@ -100,7 +101,7 @@ public class HelloUserInterfaceActivity extends Activity {
         super.onCreate(savedInstanceState);
         
 
-        /*
+    /*
 		 * -----------------------------------------------------------------------------------
 		 * !!! LAB EXERCISE !!!
 		 * -----------------------------------------------------------------------------------	
@@ -112,7 +113,7 @@ public class HelloUserInterfaceActivity extends Activity {
         //===================================================================================
         // *** YOUR CODE HERE ***	
         //===================================================================================	
-        setContentView(R.layout.layout1);
+        setContentView(R.layout.layout4);
         
         /*
 		 * -----------------------------------------------------------------------------------

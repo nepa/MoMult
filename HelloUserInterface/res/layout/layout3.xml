@@ -10,51 +10,53 @@
  				- The TableLayout groups views into rows and columns. You use the <TableRow> element to designate a row in the table. 
  				Each row can contain one or more views. Each view you place within a row forms a cell. 
  				The width for each column is determined by the largest width of each cell in that column.
- 			TODO 1.4.1	How many rows and columns in this tablelayout?	
+ 			TODO 1.4.1	How many rows and columns in this tablelayout? -> 4 rows with 2 columns each (except for button row)
  			TODO 1.4.2 	The cell directly under the Password TextView is populated with an empty element. What happens if you remove it?
- 			TODO 1.4.3 Test with this layout by adding new views, raws, and columns as you like
+ 			TODO 1.4.3 Test with this layout by adding new views, rows, and columns as you like
  -->
- 
-
-     
-
-
-
- 
 <TableLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="fill_parent" 
     android:layout_width="fill_parent"
     android:background="#000044">
-    <TableRow> 
-        <TextView 
+
+  <TableRow>
+    <!-- Content of this row should span two columns. -->
+    <TextView
+        android:text="Please enter your user data below."
+        android:layout_span="2"
+        />
+  </TableRow>
+
+  <TableRow>      
+    <TextView 
             android:text="User Name:"
             android:width ="120px"
             />
-        <EditText 
+    <EditText 
             android:id="@+id/txtUserName" 
             android:width="200px" />
-    </TableRow> 
-    <TableRow>
-        <TextView 
+  </TableRow> 
+  <TableRow>
+    <TextView 
             android:text="Password:"
             />
-        <EditText 
+    <EditText 
             android:id="@+id/txtPassword" 
             android:password="true" 
             />
-    </TableRow>
-    <TableRow>
-        <TextView />
-        <CheckBox android:id="@+id/chkRememberPassword"
-            android:layout_width="fill_parent" 
+  </TableRow>
+  <TableRow>
+    <TextView />
+    <CheckBox android:id="@+id/chkRememberPassword"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Remember Password"
             />   
-    </TableRow>
-    <TableRow>
-        <Button 
+  </TableRow>
+  <TableRow>
+    <Button 
             android:id="@+id/buttonSignIn" 
             android:text="Log In" />
-    </TableRow>
+  </TableRow>
 </TableLayout>
