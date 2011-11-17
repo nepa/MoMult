@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <!-- 
+ 	 *************************************************************************************
+	 !!! LAB EXERCISE !!!
+ 	 *************************************************************************************
+ 	TODO 1. Get involved with the basic principles of GUI layouts.
+ 		TODO 1.6 Understand the ScrollView by completing the exercise for layout/layout5.xml
+ 			Hints: 
+ 				- A ScrollView is a special type of FrameLayout in that it allows users to scroll through a list of views that occupy more space than 
+ 				the physical display. The ScrollView can contain only one child view or ViewGroup, which normally is a LinearLayout.
+				- Do not use a ListView together with the ScrollView. The ListView is designed for showing a list of related information and
+				 is optimized for dealing with large lists. 
+ 			TODO 1.6.1 Test with this layout by adding new views as you like
+ 
+ -->
+ 
+
+
+<ScrollView
+    android:id="@+id/widget54"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:layout_width="310px"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Button 1"
+            />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Button 2"
+            />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Button 3"
+            />
+        <EditText
+            android:id="@+id/txt"
+            android:layout_width="fill_parent"
+            android:layout_height="300px"
+            />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Button 4"
+            />
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Button 5"
+            />
+    </LinearLayout>
+</ScrollView>

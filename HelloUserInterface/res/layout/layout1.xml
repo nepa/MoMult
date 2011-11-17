@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+ 	 *************************************************************************************
+	 !!! LAB EXERCISE !!!
+ 	 *************************************************************************************
+ 	TODO 1. Get involved with the basic principles of GUI layouts.
+ 		TODO 1.2 Understand the LinearLayout by completing the exercise for layout/layout1.xml
+ 			TODO 1.2.1 Change the layout orientation
+ 				Hints:
+ 					-The default orientation of LinearLayout is set to horizontal. If you want to change its orientation to vertical, 
+ 					set the orientation attribute to vertical by (android:orientation="vertical")
+ 			TODO 1.2.2  Apply weight and gravity attributes to the button view
+ 					- button should be aligned to the right of its parent (which is the LinearLayout) using the layout_gravity attribute.
+ 					- button should also have weight of 0.2
+ 					- textview should have weight of 0.8
+ 				Hints:
+ 					- InLinearLayout, you can apply the layout_weight and layout_gravity attributes to views contained within it.
+					- Use the layout_weight attribute to specify the ratio in which the Button and EditText views occupy the remaining space on the screen. 
+					- The total value for the layout_weight attribute must be equal to 1. 		
+ -->
+ 
+ 	 
+ 
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    
+    <TextView
+        android:layout_width="105px"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        />
+ 
+    <Button
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        />
+     
+</LinearLayout>

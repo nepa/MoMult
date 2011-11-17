@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <!-- 
+ 	 *************************************************************************************
+	 !!! LAB EXERCISE !!!
+ 	 *************************************************************************************
+ 	TODO 1. Get involved with the basic principles of GUI layouts.
+ 		TODO 1.3 Understand the AbsoluteLayout by completing the exercise for layout/layout2.xml	
+ 			TODO 1.3.1 Position both buttons to different positions on the screen
+ -->
+ 
+<AbsoluteLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <Button
+        android:layout_width="188px"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_x="126px"
+        android:layout_y="361px"
+        />
+    <Button
+        android:layout_width="113px"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_x="12px"
+        android:layout_y="361px"
+        />
+</AbsoluteLayout>

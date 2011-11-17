@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >  
+
+<!-- Part 1 -->
+ 
+    <TextView   
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:text="Images of San Francisco" /> 
+ 
+    <Gallery
+        android:id="@+id/gallery1"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" />          
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="320px" 
+        android:layout_height="250px"
+        android:scaleType="fitXY" />
+ 
+ <!-- End Part 2 -->
+ 
+ <!-- Part 2 -->
+ <!-- 
+<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@+id/gridview"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:numColumns="auto_fit"
+    android:verticalSpacing="10dp"
+    android:horizontalSpacing="10dp"
+    android:columnWidth="90dp"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+/>
+ -->
+<!-- End Part 2 -->
+
+ 
+</LinearLayout>
+
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <!-- 
+ 	 *************************************************************************************
+	 !!! LAB EXERCISE !!!
+ 	 *************************************************************************************
+ 	TODO 1. Get involved with the basic principles of GUI layouts.
+ 		TODO 1.5 Understand the RelativeLayout by completing the exercise for layout/layout4.xml
+ 			Hints: 
+ 				- The RelativeLayout lets you specify how child views are positioned relative to each other.
+ 				- Notice that each view embedded within the RelativeLayout have attributes that allow them to align with another view. 
+ 				These attributes are: layout_alignParentTop, layout_alignParentLeft, layout_alignLeft, layout_alignRight, layout_below, and layout_centerHorizontal
+			TODO 1.5.1 Test with this layout by adding new views as you like
+ -->
+ 
+
+<!--  Solutions -->        
+
+<!--  End Solutions --> 
+
+
+<RelativeLayout
+    android:id="@+id/RLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <TextView
+        android:id="@+id/lblComments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comments"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+    <EditText
+        android:id="@+id/txtComments"
+        android:layout_width="fill_parent"
+        android:layout_height="170px"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/lblComments"
+        android:layout_below="@+id/lblComments"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="125px"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@+id/txtComments"
+        android:layout_alignRight="@+id/txtComments"
+        />
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="124px"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_below="@+id/txtComments"
+        android:layout_alignLeft="@+id/txtComments"
+        />
+</RelativeLayout>
