@@ -113,7 +113,8 @@ public class HelloUserInterfaceActivity extends Activity {
         //===================================================================================
         // *** YOUR CODE HERE ***	
         //===================================================================================	
-        setContentView(R.layout.layout4);
+        this.setContentView(R.layout.layout4);
+        //===================================================================================
         
         /*
 		 * -----------------------------------------------------------------------------------
@@ -128,6 +129,12 @@ public class HelloUserInterfaceActivity extends Activity {
         // *** YOUR CODE HERE ***	
         //===================================================================================	
         
-
+        // Test MyBasicViewsActivity
+        this.startActivity(new Intent(this, MyBasicViewsActivity.class));        
+        
+        // Test MoreViewsActivity
+        this.startActivity(new Intent(this, MoreViewsActivity.class));
+        
+        //===================================================================================
     }
 }
