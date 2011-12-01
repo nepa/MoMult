@@ -8,26 +8,27 @@
 
 <!-- Part 1 -->
  
-    <TextView   
+<!--  <TextView   
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content" 
-        android:text="Images of San Francisco" /> 
+        android:text="Images of London" />
  
-    <Gallery
+  <Gallery
         android:id="@+id/gallery1"
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content" />          
-    <ImageView
+  <ImageView
         android:id="@+id/image1"
         android:layout_width="320px" 
         android:layout_height="250px"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY" />-->
  
- <!-- End Part 2 -->
+ <!-- End Part 1 -->
  
  <!-- Part 2 -->
- <!-- 
-<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+ 
+
+  <GridView xmlns:android="http://schemas.android.com/apk/res/android" 
     android:id="@+id/gridview"
     android:layout_width="fill_parent" 
     android:layout_height="fill_parent"
@@ -36,9 +37,8 @@
     android:horizontalSpacing="10dp"
     android:columnWidth="90dp"
     android:stretchMode="columnWidth"
-    android:gravity="center"
-/>
- -->
+    android:gravity="center" />
+
 <!-- End Part 2 -->
 
  

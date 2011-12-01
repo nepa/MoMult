@@ -22,7 +22,7 @@
 		TODO 2.1 Register MyBasicViewsActivity activity to the manifest.
 		TODO 3.1 Register MoreViewsActivity activity to the manifest.
 		TODO 4.1 Register MyListViewsActivity activity to the manifest.
-		TODO 5.1 Register MyListViewsActivity activity to the manifest.
+		TODO 5.1 Register MySpinnerViewsActivity activity to the manifest.
 		TODO 6.1 Register MyDisplayViewsActivity activity to the manifest.
 	-->
  	 
@@ -39,6 +39,15 @@
     
     <!-- Register MoreViewsActivity -->
     <activity android:name=".MoreViewsActivity" android:label="@string/app_name" />
+    
+    <!-- Register MyListViewsActivity -->
+    <activity android:name=".MyListViewsActivity" android:label="@string/app_name" />
+    
+    <!-- Register MySpinnerViewsActivity -->
+    <activity android:name="MySpinnerViewsActivity" android:label="@string/app_name" />
+    
+    <!-- Register MyDisplayViewsActivity -->
+    <activity android:name="MyDisplayViewsActivity" android:label="@string/app_name" />
     
   </application>
 </manifest>

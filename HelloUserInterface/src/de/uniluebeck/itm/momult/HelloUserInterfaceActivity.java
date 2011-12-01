@@ -135,6 +135,15 @@ public class HelloUserInterfaceActivity extends Activity {
         // Test MoreViewsActivity
         this.startActivity(new Intent(this, MoreViewsActivity.class));
         
+        // Test MyListViewsActivity
+        this.startActivity(new Intent(this, MyListViewsActivity.class));
+        
+        // Test MySpinnerViewsActivity
+        this.startActivity(new Intent(this, MySpinnerViewsActivity.class));
+        
+        // Test MyDisplayViewsActivity
+        this.startActivity(new Intent(this, MyDisplayViewsActivity.class));
+        
         //===================================================================================
     }
 }
