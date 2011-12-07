@@ -2,13 +2,11 @@ package de.uniluebeck.itm.momult;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Gallery;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -143,9 +141,7 @@ public class MyDisplayViewsActivity extends Activity
       }
     });
 
-    // End Part 2
-
-    
+    // End Part 2   
   }
   
   public class ImageAdapter extends BaseAdapter

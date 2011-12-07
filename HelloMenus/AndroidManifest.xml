@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="de.uniluebeck.itm.momult"
+      android:versionCode="1"
+      android:versionName="1.0">
+  <uses-sdk android:minSdkVersion="7" />
+
+  <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <activity android:name=".HelloMenusActivity"
+                  android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+	<!-- 
+ 	 *************************************************************************************
+	 !!! LAB EXERCISE !!!
+ 	 *************************************************************************************
+		To register any activity to the manifest add the activity node here.
+		TODO 1. Register MenusActivity activity to the manifest.
+	-->
+ 	 
+ 	<!-- 
+ 	===================================================================================
+	 *** YOUR CODE HERE ***	
+ 	===================================================================================
+	-->	
+  
+    <!-- WARNING: ADD DOT IN FRONT OF ACTIVITY NAME, OTHERWISE IT WON'T WORK! -->
+    
+    <!-- Register MyBasicViewsActivity -->
+    <activity android:name=".MenusActivity" android:label="@string/app_name" />
+        
+  </application>
+</manifest>
