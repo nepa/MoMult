@@ -19,7 +19,6 @@ import android.util.Log;
  * 			TODO 6.7.1. Complete the createNotification method which customize the notification.
  * 			TODO 6.7.2. Review and complete the onReceive method which does the notification once received the intent.
  */
-
 //===================================================================================
 // *** YOUR CODE HERE ***	
 //===================================================================================
@@ -30,7 +29,6 @@ public class ProximityIntentReceiver extends BroadcastReceiver
   @Override
   public void onReceive(Context context, Intent intent)
   {
-
     // Key used for the Bundle extra holding a boolean indicating whether a proximity
     // alert is entering (true) or exiting (false).
     String key = LocationManager.KEY_PROXIMITY_ENTERING;
@@ -48,13 +46,11 @@ public class ProximityIntentReceiver extends BroadcastReceiver
       Log.d(getClass().getSimpleName(), "exiting");
     }
 
-
     // Create a notification manager
     NotificationManager notificationManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-    // Get bending intent
+    // Get pending intent
     PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, null, 0);
-
 
     /*
      * -----------------------------------------------------------------------------------
@@ -70,6 +66,11 @@ public class ProximityIntentReceiver extends BroadcastReceiver
 
     //===================================================================================
     // *** YOUR CODE HERE ***	
+    //===================================================================================
+    Notification notification = this.createNotification();
+    notification.setLatestEventInfo(context, "Notification", "Welcome back.", pendingIntent);
+
+    notificationManager.notify(NOTIFICATION_ID, notification);
     //===================================================================================
   }
 
@@ -95,6 +96,19 @@ public class ProximityIntentReceiver extends BroadcastReceiver
 
     //===================================================================================
     // *** YOUR CODE HERE ***	
+    //===================================================================================
+    notification.icon = R.drawable.ic_menu_notifications;
+    notification.when = System.currentTimeMillis();
+
+    notification.flags |= Notification.FLAG_AUTO_CANCEL;
+    notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+
+    notification.defaults |= Notification.DEFAULT_VIBRATE;
+    notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+    notification.ledARGB = Color.WHITE;
+    notification.ledOnMS = 1500;
+    notification.ledOffMS = 1500;
     //===================================================================================
 
     return notification;

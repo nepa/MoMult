@@ -38,7 +38,7 @@ import android.widget.Toast;
  * 	- Proximity alerts - Point Of Interest (POI).
  * 		
  * TODO
- * 1. Follow the instructions bellow and complete the exercise
+ * 1. Follow the instructions below and complete the exercise
  * 
  * Hint:
  * - Read the sections marked: !!! LAB EXERCISE !!!
@@ -56,7 +56,6 @@ import android.widget.Toast;
  *  - Good instructions about locations: http://developer.android.com/guide/topics/location/obtaining-user-location.html
  *  - This is based on http://www.javacodegeeks.com/2011/01/android-proximity-alerts-tutorial.html
  */
-
 /************************************* !!! LAB EXERCISE !!!  *************************************
  *
  * ********
@@ -145,10 +144,10 @@ public class ProxAlertActivity extends Activity
     //===================================================================================	
     this.locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
     this.locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MINIMUM_TIME_BETWEEN_UPDATE, MINIMUM_DISTANCECHANGE_FOR_UPDATE, new MyLocationListener());
-    
+
     this.latitudeEditText = (EditText)this.findViewById(R.id.point_latitude);
     this.longitudeEditText = (EditText)this.findViewById(R.id.point_longitude);
-    
+
     this.findCoordinatesButton = (Button)this.findViewById(R.id.find_coordinates_button);
     this.findCoordinatesButton.setOnClickListener(new OnClickListener()
     {
@@ -157,7 +156,7 @@ public class ProxAlertActivity extends Activity
         getCoordinatesFromLastKnownLocation();
       }
     });
-    
+
     this.savePointButton = (Button)this.findViewById(R.id.save_point_button);
     this.savePointButton.setOnClickListener(new OnClickListener()
     {
@@ -190,16 +189,16 @@ public class ProxAlertActivity extends Activity
     // *** YOUR CODE HERE ***	
     //===================================================================================	
     Location lastLocation = this.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-    
+
     if (null == lastLocation)
     {
       DisplayToast("Last location is not known.");
       return;
     }
-    
+
     float latitude = (float)lastLocation.getLatitude();
     float longitude = (float)lastLocation.getLongitude();
-    
+
     this.saveCoordinatesInPreferences(latitude, longitude);
     this.addProximityAlert(latitude, longitude);
     //===================================================================================	
@@ -231,18 +230,18 @@ public class ProxAlertActivity extends Activity
      * 		TODO 6.7 Complete ProximityIntentReceiver class which will receive the intents when the location
      *             is near to a POI.
      */
-    
+
     //===================================================================================
     // *** YOUR CODE HERE ***	
     //===================================================================================	
     Intent intent = new Intent(PROX_ALERT_INTENT);
-    
+
     PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-    
+
     this.locationManager.addProximityAlert(latitude, longitude, POINT_RADIUS, PROX_ALERT_EXPIRATION, pendingIntent);
-    
+
     IntentFilter intentFilter = new IntentFilter(PROX_ALERT_INTENT);
-    
+
     this.registerReceiver(new ProximityIntentReceiver(), intentFilter);
     //===================================================================================	
   }
@@ -250,23 +249,30 @@ public class ProxAlertActivity extends Activity
   // When the user wants to find his current coordinates, the getCoordinatesFromLastKnownLocation method is invoked. 
   private void getCoordinatesFromLastKnownLocation()
   {
-    /*
-     * -----------------------------------------------------------------------------------
+    /* -----------------------------------------------------------------------------------
      * !!! LAB EXERCISE !!!
      * -----------------------------------------------------------------------------------	
      * 
      * TODO 7. Complete the getCoordinatesFromLastKnownLocation method. We use the getLastKnownLocation method and
      *         retrieve a Location object. The EditTexts are then populated with the retrieved location information.
-     * 		TODO 7.1. get the  last known location for the location manager
+     * 		TODO 7.1. get the last known location for the location manager
      * 			Hint: 
      * 				- Define a variable called location form type Location that will host the value.
      * 				- Use the getLastKnownLocation method with the GPS_PROVIDER the provider
-     * 		TODO 5.2 if the location is not null then set the latitudeEditText and longitudeEditText to the values.
+     * 		TODO 7.2 if the location is not null then set the latitudeEditText and longitudeEditText to the values.
      *             Make sure that you format the values based on NumberFormat nf variable create at the top of this activity.
-     * 			Hint: Use  nf.format with the value you have got form the location for the getLatitude and getLongitude.
+     * 			Hint: Use nf.format with the value you have got from the location for the getLatitude and getLongitude.
      */
     //===================================================================================
     // *** YOUR CODE HERE ***	
+    //===================================================================================	
+    Location location = this.locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+    if (null != location)
+    {
+      this.latitudeEditText.setText(nf.format(location.getLatitude()));
+      this.longitudeEditText.setText(nf.format(location.getLongitude()));
+    }
     //===================================================================================	
   }
 
@@ -282,7 +288,7 @@ public class ProxAlertActivity extends Activity
     // android.content.SharedPreferences Interface for accessing and modifying preference data returned
     // by getSharedPreferences(String, int). For any particular set of preferences, there is a single
     // instance of this class that all clients share. Modifications to the preferences must go through
-    // an SharedPreferences. Editor object to ensure the preference values remain in a consistent state
+    // an SharedPreferences editor object to ensure the preference values remain in a consistent state
     // and control when they are committed to storage.
 
     SharedPreferences prefs = this.getSharedPreferences(getClass().getSimpleName(), Context.MODE_PRIVATE);
@@ -297,20 +303,19 @@ public class ProxAlertActivity extends Activity
    * !!! LAB EXERCISE !!!
    * -----------------------------------------------------------------------------------	
    * 
-   * TODO 9. Review the retrievelocationFromPreferences method
+   * TODO 9. Review the retrieveLocationFromPreferences method
    */
-  private Location retrievelocationFromPreferences()
+  private Location retrieveLocationFromPreferences()
   {
-
     SharedPreferences prefs = this.getSharedPreferences(getClass().getSimpleName(), Context.MODE_PRIVATE);
     Location location = new Location("POINT_LOCATION");
     location.setLatitude(prefs.getFloat(POINT_LATITUDE_KEY, 0));
     location.setLongitude(prefs.getFloat(POINT_LONGITUDE_KEY, 0));
-    
+
     return location;
   }
 
-  // Called one the location is changed
+  // Called when the location is changed
   public class MyLocationListener implements LocationListener
   {
     public void onLocationChanged(Location location)
@@ -325,15 +330,15 @@ public class ProxAlertActivity extends Activity
        *            Then display the difference in a toast message.
        * 		Hint: Use the location.distanceTo() method.
        */
-      
+
       //===================================================================================
       // *** YOUR CODE HERE ***	
       //===================================================================================	
-      Location locationFromPreferences = retrievelocationFromPreferences();
-      
+      Location locationFromPreferences = retrieveLocationFromPreferences();
+
       float distance = location.distanceTo(locationFromPreferences);
-      
-      DisplayToast(String.valueOf(distance));
+
+      DisplayToast("Distance to location: " + String.valueOf(distance));
       //===================================================================================	
     }
 
@@ -349,7 +354,7 @@ public class ProxAlertActivity extends Activity
     {
     }
   }
-  
+
   private void DisplayToast(String msg)
   {
     Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();

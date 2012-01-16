@@ -7,7 +7,7 @@
       
   <application android:icon="@drawable/icon" android:label="@string/app_name">
         
-    <activity android:name="itm.mms.exercises.ProxAlertActivity"
+    <activity android:name="de.uniluebeck.itm.momult.ProxAlertActivity"
                   android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
