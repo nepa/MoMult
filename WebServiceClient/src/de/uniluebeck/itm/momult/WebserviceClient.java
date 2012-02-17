@@ -24,10 +24,10 @@ import org.ksoap2.transport.HttpTransportSE;
 public class WebserviceClient extends Activity
 {
 //  private static final String SOAP_ACTION = "http://www.webserviceX.NET/GetQuote";
-  private static final String SOAP_ACTION = "http://netpan.ironbytes.de/s1/s1.php/UploadData";
+  private static final String SOAP_ACTION = "http://netpan.ironbytes.de/s1/s1.php/getSamples";
 
 //  private static final String METHOD_NAME = "GetQuote";
-  private static final String METHOD_NAME = "UploadData";
+  private static final String METHOD_NAME = "getSamples";
 
 //  private static final String NAMESPACE = "http://www.webserviceX.NET/";
   private static final String NAMESPACE = "urn:MediaService";
@@ -51,11 +51,14 @@ public class WebserviceClient extends Activity
         String tagName = ((EditText)findViewById(R.id.tagName)).getText().toString();
 
         SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
-        request.addProperty("Longitude", "long");
-        request.addProperty("Latitude", "lat");
-        request.addProperty("Description", "dec");
-        request.addProperty("PayloadType", "type");
-        request.addProperty("Payload", "payload");
+        request.addProperty("Latitude", "53.83421");
+        request.addProperty("Longitude", "10.70014");
+        request.addProperty("Range", "1.3");
+//        request.addProperty("Longitude", "long");
+//        request.addProperty("Latitude", "lat");
+//        request.addProperty("Description", "dec");
+//        request.addProperty("PayloadType", "type");
+//        request.addProperty("Payload", "payload");
 //        request.addProperty("symbol", symbol);
         
 //        // Load file and covert it to byte stream
@@ -91,7 +94,7 @@ public class WebserviceClient extends Activity
         {
           androidHttpTransport.call(SOAP_ACTION, envelope);
           SoapObject response = (SoapObject)envelope.bodyIn;
-          String xmlDocument = response.getProperty(0).toString();
+//          String xmlDocument = response.getProperty(0).toString();
 
 //          ((TextView)findViewById(R.id.lblStatus)).setText("Response: " +
 //                  this.getValueOfTag(tagName, xmlDocument) + "\n\n" + xmlDocument);
